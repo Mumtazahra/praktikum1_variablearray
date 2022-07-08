@@ -9,7 +9,6 @@ class Login extends CI_Controller{
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        // cek user apakah sudah benar, jika benar arahkan ke halaman mahasiswa, jika salah kembali ke login
         if ($username == 'admin' && $password == 'admin'){
             $userdata = [
                 "username" => $username,

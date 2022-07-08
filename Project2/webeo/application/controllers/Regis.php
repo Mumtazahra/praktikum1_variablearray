@@ -27,7 +27,7 @@ class Regis extends CI_Controller{
 			$password = $this->input->post('password');
             $created_at = $this->input->post('created_at');
 			$role = $this->input->post('role');
-			$this->auth->regis($email,$username,$password,$created_at,$role);
+			$this->auth_model->regis($email,$username,$password,$created_at,$role);
 			$this->session->set_flashdata('success_regis','Proses Pendaftaran User Berhasil');
 			redirect('login/index');
 		}

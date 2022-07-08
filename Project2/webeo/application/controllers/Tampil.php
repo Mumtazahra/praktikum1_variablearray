@@ -24,7 +24,7 @@ class Tampil extends CI_controller{
             $data['kategori_peserta'] = $kategori_peserta;
             $this->load->view('layout/header');
             $this->load->view('layout/sidebars');
-            $this->load->view('kategori_peserta/index', $data);
+            $this->load->view('kategori_peserta/tampil', $data);
             $this->load->view('layout/footer');
         }
     }

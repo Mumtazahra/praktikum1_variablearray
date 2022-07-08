@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jenis Kegiatan</title>
+    <title>Data Daftar</title>
     <script>
         function hapusjkegiatan(pesan){
             if (confirm(pesan)) {
@@ -14,35 +14,56 @@
             }
         }
     </script>
+    <style>
+        .my-table thead td, .icon {
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
 </head>
-
-
-</br>
-
-<body style="background-color: #E9AE8C;">
-<div class="content-wrapper" style="background-color: #E9AE8C;">
+<body>
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-    <div class="container">
-    <div class="col-md-5">
-    <div>
-    <?php
-    $username = $this->session->userdata('username');
-    if($username) {
-        echo "<h4>Selamat Datang $username</h4>";
-    }
-    ?>
-    </div>
-    <h3>Jenis Kegiatan</h3>
-    <table border="1" class="table" style="background-color: #ffffff;">
+          <?php
+            $username = $this->session->userdata('username');
+            if($username) {
+                echo "<h2>Selamat Datang $username</h2>";
+            }
+            ?>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Jenis Kegiatan</h3>
+        </div>
+        <div class="card-body">
+        <table class="table table-bordered my-table">
         <thead>
-            <tr>
-                <th>No</th>
-                <th>NAMA</th>
-                <th>Action</th>
+            <tr class="table-primary">
+                <td rowspan="2" width="5%">No</td>
+                <td rowspan="2">NAMA</td>
+                <td colspan="2" width="10%">Action</td>
+            </tr>
+            <tr class="table-info">
+                <td>Ubah</td>
+                <td>Hapus</td>
             </tr>
         </thead>
         <tbody>
@@ -53,12 +74,14 @@
             <tr>
                 <td><?php echo $nomor ?></td>
                 <td><?php echo $jkg -> nama ?></td>
-                <td>
+                <td class="icon">
                     <a href=<?php echo base_url("index.php/jenis_kegiatan/edit/$jkg->id") ?>
-                         class="btn btn-success btn-lg active">Edit</a>
+                         class="btn btn-warning btn-lg active"><i class="nav-icon fas fa-edit"></i></a>
+                </td>         
+                <td class="icon">
                     <a href= <?php echo base_url("index.php/jenis_kegiatan/delete/$jkg->id") ?> 
                         class="btn btn-danger btn-lg active"
-                        onclick=" return hapusjkegiatan('Apakah Anda yakin ingin menghapus data kegiatan ini ?')" >Hapus</a>                  
+                        onclick=" return hapusjkegiatan('Apakah Anda yakin ingin menghapus data kegiatan ini ?')" ><i class="nav-icon fas fa-trash"></i></a>                  
                 </td>
             </tr>
             <?php
@@ -67,12 +90,6 @@
             ?>
         </tbody>
     </table>
-    </div>
-    </div>
-    </div>
         </div>
-        </div>
-    </section>
-    </div>
 </body>
 </html>

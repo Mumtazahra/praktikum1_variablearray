@@ -14,40 +14,61 @@
             }
         }
     </script>
+    <style>
+        .my-table thead td, .icon {
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
 </head>
-<?php
-$username = $this->session->userdata('username');
-if($username) {
-    echo "<h2>Selamat Datang $username</h2>";
-}
-?>
-
-</br>
-</br>
-</br>
-</br>
-
-<body style="background-color: #E9AE8C;">
-<div class="content-wrapper" style="background-color: #E9AE8C;">
+<body>
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6"> 
-            <div class="container">
-            <div class="col-md-5">
-            <h3>Data Daftar</h3>
-            <table border="1" class="table" style="background-color: #ffffff">
+          <div class="col-sm-6">
+          <?php
+            $username = $this->session->userdata('username');
+            if($username) {
+                echo "<h2>Selamat Datang $username</h2>";
+            }
+            ?>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Data Daftar</h3>
+        </div>
+        <div class="card-body">
+        <table class="table table-bordered my-table">
                 <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>TANGGAL DAFTAR</th>
-                        <th>ALASAN</th>
-                        <th>USERS ID</th>
-                        <th>KEGIATAN ID</th>
-                        <th>KATEGORI PESERTA ID</th>
-                        <th>NO SERTIFIKAT</th>
-                        <th>ACTION</th>
+                    <tr class="table-primary">
+                        <td rowspan="2" width="5%">No</td>
+                        <td rowspan="2">TANGGAL DAFTAR</td>
+                        <td rowspan="2">ALASAN</td>
+                        <td rowspan="2">USERS ID</td>
+                        <td rowspan="2">KEGIATAN ID</td>
+                        <td rowspan="2">KATEGORI PESERTA ID</td>
+                        <td rowspan="2">NO SERTIFIKAT</td>
+                        <td colspan="2" width="10%">ACTION</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>Ubah</td>
+                        <td>Hapus</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,12 +84,14 @@ if($username) {
                         <td><?php echo $dft -> kegiatan_id ?></td>
                         <td><?php echo $dft -> kategori_peserta_id ?></td>
                         <td><?php echo $dft -> nosertifikat ?></td>
-                        <td>
-                        <a href=<?php echo base_url("index.php/daftar/edit/$dft->id") ?>
-                            class="btn btn-success btn-lg active">Edit</a> 
-                        <a href= <?php echo base_url("index.php/daftar/delete/$dft->id") ?> 
+                        <td class="icon">
+                             <a href=<?php echo base_url("index.php/daftar/edit/$dft->id") ?>
+                            class="btn btn-warning btn-lg active"><i class="nav-icon fas fa-edit"></i></a> 
+                        </td>
+                        <td class="icon">
+                            <a href= <?php echo base_url("index.php/daftar/delete/$dft->id") ?>
                             class="btn btn-danger btn-lg active" 
-                            onclick=" return hapusdaftar('Apakah Anda yakin ingin menghapus data ini ?')" >Hapus</a>
+                            onclick=" return hapusdaftar('Apakah Anda yakin ingin menghapus data ini ?')" ><i class="nav-icon fas fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php
@@ -77,12 +100,6 @@ if($username) {
                     ?>
                 </tbody>
             </table>
-            </div>
-            </div>
-            </div>
-            </div>
         </div>
-    </section>
-    </div>
 </body>
 </html>

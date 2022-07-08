@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-3" style="background-color: #BDAAA6;">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="<?php echo base_url("index.php/home/index#")?>" class="brand-link">
       <img src="<?php echo base_url('dist/img/logo.png')?>" alt="logo" class="brand-image img-circle elevation-2" style="opacity: .9">
       <span class="brand-text font-weight-light"><h3>Springoryz</h3></span>
     </a>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kegiatan</title>
+    <title>Data Daftar</title>
     <script>
         function hapuskegiatan(pesan){
             if (confirm(pesan)) {
@@ -14,37 +14,64 @@
             }
         }
     </script>
+    <style>
+        .my-table thead td, .icon {
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
 </head>
-
-</br>
-</br>
-</br>
-</br>
-
-<body style="background-color: #E9AE8C;" >
-<div class="content-wrapper" style="background-color: #E9AE8C;">
+<body>
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6"> 
-            <div class="container">
-            <div class="col-md-5">
-            <h3>Data Kegiatan</h3>
-            <table border="1" class="table" style="background-color: #ffffff;">
+          <div class="col-sm-6">
+          <?php
+            $username = $this->session->userdata('username');
+            if($username) {
+                echo "<h2>Selamat Datang $username</h2>";
+            }
+            ?>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Kegiatan</h3>
+        </div>
+        <div class="card-body">
+        <table class="table table-bordered my-table">
                 <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>JUDUL</th>
-                        <th>KAPASITAS</th>
-                        <th>HARGA TIKET</th>
-                        <th>TANGGAL</th>
-                        <th>NARASUMBER</th>
-                        <th>TEMPAT</th>
-                        <th>PIC</th>
-                        <th>FOTO FLYER</th>
-                        <th>JENIS ID</th>
-                        <th>ACTION</th>
+                    <tr class="table-primary">
+                        <td rowspan="2" width="5%">No</td>
+                        <td rowspan="2">JUDUL</td>
+                        <td rowspan="2">KAPASITAS</td>
+                        <td rowspan="2">HARGA TIKET</td>
+                        <td rowspan="2">TANGGAL</td>
+                        <td rowspan="2">NARASUMBER</td>
+                        <td rowspan="2">TEMPAT</td>
+                        <td rowspan="2">PIC</td>
+                        <td rowspan="2">FOTO FLYER</td>
+                        <td rowspan="2">JENIS ID</td>
+                        <td colspan="2" width="10%">ACTION</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>Ubah</td>
+                        <td>Hapus</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,12 +90,14 @@
                         <td><?php echo $keg -> pic ?></td>
                         <td><?php echo $keg -> foto_flyer ?></td>
                         <td><?php echo $keg -> jenis_id ?></td>
-                        <td>
+                        <td  class="icon">
                         <a href=<?php echo base_url("index.php/kegiatan/edit/$keg->id") ?>
-                            class="btn btn-success btn-lg active">Edit</a>
+                            class="btn btn-warning btn-lg active"><i class="nav-icon fas fa-edit"></i></a>
+                        </td>
+                        <td class="icon">
                         <a href= <?php echo base_url("index.php/kegiatan/delete/$keg->id") ?> 
                             class="btn btn-danger btn-lg active"
-                            onclick=" return hapuskegiatan('Apakah Anda yakin ingin menghapus data kegiatan ini ?')" >Hapus</a>  
+                            onclick=" return hapuskegiatan('Apakah Anda yakin ingin menghapus data kegiatan ini ?')" ><i class="nav-icon fas fa-trash"></i></a>  
                         </td>
                     </tr>
                     <?php
@@ -77,11 +106,6 @@
                     ?>
                 </tbody>
             </table>
-            </div>
-            </div>
-            </div>
         </div>
-      </div>
-    </section>
 </body>
 </html>
