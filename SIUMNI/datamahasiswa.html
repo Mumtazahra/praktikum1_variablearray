@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+    <link rel="stylesheet" href="../SIUMNI/fontawesome-free/css/all.min.css">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../SIUMNI/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      tbody{
+        width: 90%;
+      }
+    </style>
+    <!-- CSS Template -->
+    <link href="../SIUMNI/dist/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <div class="flex-wrap">
+            <img src="../SIUMNI/images/logo.png" style="height: 60px; padding-top: 10px;" alt="">
+            <span class="brand-text font-weight-light text-white" style="padding-left: 5px; font-size: 18px;"><strong>SIUMNI-Backend</strong></span>
+        </div>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <div class="user-panel mt-3 pb-1 mb-2 d-flex">
+                <div class="image">
+                  <img src="images/Man2.png" style="width: 50px; padding-left: 10px;" class="img-circle elevation-2" alt="User Image">
+                  <span class="brand-text font-weight-light text-white" style="padding-left: 10px; font-size: 15px;">Ahmad Admin</span>
+                </div>
+            </div>
+            <hr>
+              <div class="input-group" style="padding-right: 15px; padding-left: 5px ;" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-sidebar bg-secondary" style="column-width: 30px;">
+                    <i class="fa fa-search" style="color: white;"></i>
+                  </button>
+                </div>
+              </div>
+            <hr>
+            <div class="position-sticky pt-1">
+              <ul class="nav flex-column">
+                <li class="nav-item" style="font-size:20px;">
+                  <a class="nav-link active" href="#">
+                    Dashboard Alumni
+                    <i class="fa fa-angle-right" style="padding-left: 5px;"></i>
+                  </a>
+                </li>
+                <hr>
+                <li class="nav-item" style="font-size: 20px;">
+                  <a class="nav-link text-white" href="https://www.jobstreet.co.id/id/job-search/it-jobs/">
+                    <i class="far fa-file"></i>  
+                    <span data-feather="file"></span>
+                    L o k e r
+                  </a>
+                </li>
+                <hr>
+                <li class="nav-item" style="font-size: 20px;">
+                  <a class="nav-link text-white" href="https://akademik.nurulfikri.ac.id/">
+                    <i class="fas fa-building"></i>
+                    <span data-feather="shopping-cart"></span>
+                    Mitra NF
+                  </a>
+                </li>
+                <hr>
+                <li class="nav-item" style="font-size: 20px;">
+                  <a class="nav-link text-white" href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span data-feather="users"></span>
+                    L o g o u t
+                  </a>
+                </li>
+            </div>
+          </nav>
+        </div>
+    </div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="padding-left: 10px;">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Data Mahasiswa</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <a class="nav-link" style="font-size: 15px;">
+            Alumni
+            <i class="fa fa-angle-right" style="padding-left: 5px;"></i>
+          </a>
+          </a>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+        <label for="text" class="col-2 col-form-label" style="font-size: 17px;"><strong>Angkatan:</strong>
+          <span class="select">
+          <select id="select" name="select" class="flex-wraps">
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+          </select>
+          </span>
+        </label> 
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3" style="font-size: 35px;">
+        <a href="daftar.html"><i class="fa fa-user-plus"></i></a>  
+      </div>
+    </main>
+    <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+      <table class="table table-bordered col-md-9 ms-sm-auto col-lg-10 px-md-4" style="text-align: center;">
+        <thead>
+            <tr>
+              <th>Nomor</th>
+              <th>Angkatan</th>
+              <th>NIM</th>
+              <th>Nama Lengkap</th>
+              <th>Pekerjaan
+                <i class="fa fa-angle-down" style="float: right;"></i>
+              </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-widget="expandable-table" aria-expanded="false" style="text-align: center;">
+              <td>1</td>
+              <td>2018</td>
+              <td>01160001</td>
+              <td>Ahmad Hasan</td>
+              <td>Founder StartUp</td>
+            </tr>
+            <tr data-widget="expandable-table" aria-expanded="false" style="text-align: center;">
+              <td>2</td>
+              <td>2018</td>
+              <td>01160040</td>
+              <td>Fathimah Zahrani</td>
+              <td>Dosen</td>
+            </tr>
+            <tr data-widget="expandable-table" aria-expanded="false" style="text-align: center;">
+                <td>3</td>
+                <td>2018</td>
+                <td>01160021</td>
+                <td>Anto Hakim</td>
+                <td>Programmer</td>
+            </tr>
+        </tbody>
+        </table>
+    </main>
+    <!--JS header-->
+    <script src="../SIUMNI/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

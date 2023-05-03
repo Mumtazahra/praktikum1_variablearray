@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Alumni</title>
+    <link rel="stylesheet" href="../SIUMNI/fontawesome-free/css/all.min.css">
+    <!-- CSS -->
+    <link href="../SIUMNI/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    .card{
+      border: 2px solid;
+    }
+    #input{
+      border: 1px solid;
+    }
+    </style>
+
+    <!-- CSS Template -->
+    <link href="../SIUMNI/dist/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <div class="flex-wrap">
+            <img src="../SIUMNI/images/logo.png" style="height: 60px; padding-top: 10px;" alt="">
+            <span class="brand-text font-weight-light text-white" style="padding-left: 5px; font-size: 18px;"><strong>SIUMNI-Backend</strong></span>
+        </div>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <div class="user-panel mt-4 pb-1 mb-2 d-flex">
+                <div class="image">
+                  <img src="images/Man2.png" style="width: 50px; padding-left: 10px;" class="img-circle elevation-2" alt="User Image">
+                  <span class="brand-text font-weight-light text-white" style="padding-left: 10px; font-size: 15px;">Ahmad Admin</span>
+                </div>
+            </div>
+            <hr>
+              <div class="input-group" style="padding-right: 15px; padding-left: 5px ;" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-sidebar bg-secondary" style="column-width: 30px;">
+                    <i class="fa fa-search" style="color: white;"></i>
+                  </button>
+                </div>
+              </div>
+            <hr>
+            <div class="position-sticky pt-1">
+              <ul class="nav flex-column">
+                <li class="nav-item" style="font-size:20px;">
+                  <a class="nav-link active" href="#">
+                    Dashboard Alumni
+                    <i class="fa fa-angle-right" style="padding-left: 5px;"></i>
+                  </a>
+                </li>
+                <hr>
+                <li class="nav-item" style="font-size: 20px;">
+                  <a class="nav-link text-white" href="https://www.jobstreet.co.id/id/job-search/it-jobs/">
+                    <i class="far fa-file"></i>  
+                    <span data-feather="file"></span>
+                    L o k e r
+                  </a>
+                </li>
+                <hr>
+                <li class="nav-item" style="font-size: 20px;">
+                  <a class="nav-link text-white" href="https://akademik.nurulfikri.ac.id/">
+                    <i class="fas fa-building"></i>
+                    <span data-feather="shopping-cart"></span>
+                    Mitra NF
+                  </a>
+                </li>
+                <hr>
+                <li class="nav-item" style="font-size: 20px;">
+                  <a class="nav-link text-white" href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span data-feather="users"></span>
+                    L o g o u t
+                  </a>
+                </li>
+            </div>
+          </nav>
+        </div>
+    </div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="padding-left: 10px;">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Data Mahasiswa</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <a class="nav-link" style="font-size: 15px;">
+            Alumni
+            <i class="fa fa-angle-right" style="padding-left: 5px;"></i>
+          </a>
+          </a>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+        <label for="text" class="col-2 col-form-label" style="font-size: 17px;"><strong>Angkatan:</strong>
+          <span class="select">
+          <select id="select" name="select" class="flex-wraps">
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+          </select>
+          </span>
+        </label> 
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 ">
+        <h4><strong>Daftarkan Alumni</strong></h4>  
+      </div>
+      <div class="card col-sm-10">
+        <div class="form-group row" style="padding: 10px;">
+          <label for="input" class="col-sm-2 col-form-label" style="width: 150px">Cari Nama Alumni :</label> 
+          <div class="col-7">
+            <div class="input-group">
+              <div class="input-group-prepend">
+              <button class="input-group-text">
+                <i class="fa fa-search" style="height: 25px;"></i>
+              </button>
+              </div> 
+              <input id="text" name="text" placeholder="search" type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row" style="padding: 10px;">
+          <label for="input" class="col-sm-2 col-form-label">Program Studi :</label>
+          <div class="col-sm-7">
+            <input type="Program Studi" class="form-control" id="input" placeholder="" >
+          </div>
+        </div>
+        <div class="form-group row" style="padding: 10px;">
+          <label for="input" class="col-sm-2 col-form-label">Tahun Masuk :</label>
+          <div class="col-sm-2">
+            <input type="Tahun Masuk" class="form-control" id="input" placeholder=""> 
+          </div>
+        </div>
+        <div class="form-group row" style="padding: 10px;">
+          <label for="input" class="col-sm-2 col-form-label">Tahun Lulus :</label>
+          <div class="col-sm-2">
+            <input type="Tahun Lulus" class="form-control" id="input" placeholder=""> 
+          </div>
+        </div>
+        <div class="form-group row" style="padding: 10px;">
+          <label for="input" class="col-sm-2 col-form-label">Alamat LinkedIn :</label>
+          <div class="col-sm-7">
+            <input type="Alamat LinkedIn" class="form-control" id="input" placeholder=""> 
+          </div>
+        </div>
+        <div class="form-group row" style="padding: 10px;">
+          <label for="input" class="col-sm-2 col-form-label">Pekerjaan :</label>
+          <div class="col-sm-7">
+            <input type="Pekerjaan" class="form-control" id="input" placeholder=""> 
+          </div>
+        </div>
+        <div class="form-group row" style="padding: 10px;">
+          <label for="input" class="col-sm-2 col-form-label">Alamat Kantor :</label>
+          <div class="col-sm-7">
+            <input type="Alamat Kantor" cols="40" rows="5" class="form-control" id="input" placeholder=""> 
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-7 col-8" style="padding-bottom: 10px;">
+            <a href="datamahasiswa.html">
+              <button class="btn btn-primary">
+              Simpan
+            </button>
+             </a> 
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--JS header-->
+    <script src="../SIUMNI/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
